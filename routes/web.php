@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $medecines = Product::where('category_id',1)->limit(4)->get();
-    return view('frontend.pages.index',compact('medecines'));
+    $baby = Product::where('category_id',2)->limit(2)->get();
+    return view('frontend.pages.index',compact('medecines','baby'));
 });
 
 Auth::routes();
