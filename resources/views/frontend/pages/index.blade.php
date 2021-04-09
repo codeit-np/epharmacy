@@ -73,4 +73,48 @@
           </div>
       </div>
   </div>
+
+    {{-- Beauty Product --}}
+    <div class="py-5">
+      <div class="container">
+          <h1 class="text-center">Beauty & Customatic <span class="text-danger">Products</span></h1>
+          <div class="row">
+              @foreach ($beauty as $beauty)
+                  <div class="col-md-3">
+                      <div class="card">
+                          <div style="height:200px;background-position: center;background-size: cover;background-image: url('{{ asset($beauty->image) }}')"></div>
+                          <div class="card-body">
+                            <h5 class="card-title">{{ $beauty->name }}</h5>
+                            <h6 class="card-title">Rs.{{ $beauty->price }}</h6>
+                            <p class="card-text">{{ Str::limit($beauty->description,50) }}</p>
+                            <a href="#" class="btn btn-primary">More Details</a>
+                          </div>
+                        </div>
+                  </div>
+              @endforeach
+          </div>
+      </div>
+  </div>
+
+   {{-- Nutrition Product --}}
+   <div class="py-5">
+    <div class="container">
+        <h1 class="text-center">Nutrition & Supplements <span class="text-danger">Products</span></h1>
+        <div class="row">
+            @foreach ($nutrition as $nutrition)
+                <div class="col-md-3">
+                    <div class="card">
+                        <div style="height:200px;background-position: center;background-size: cover;background-image: url('{{ asset($nutrition->image) }}')"></div>
+                        <div class="card-body">
+                          <h5 class="card-title">{{ $nutrition->name }}</h5>
+                          <h6 class="card-title">Rs.{{ $nutrition->price }}</h6>
+                          <p class="card-text">{{ Str::limit($nutrition->description,50) }}</p>
+                          <a href="#" class="btn btn-primary">More Details</a>
+                        </div>
+                      </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 @endsection
