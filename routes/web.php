@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductListController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Admin
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
+Route::get('productlist/{id}',[ProductListController::class,'getList']);
