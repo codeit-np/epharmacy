@@ -38,10 +38,10 @@
                       Shop
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Medicine</a></li>
-                      <li><a class="dropdown-item" href="#">Baby Products</a></li>
-                      <li><a class="dropdown-item" href="#">Beuty & Customatic Products</a></li>
-                      <li><a class="dropdown-item" href="#">Nutrition & Supplements</a></li>
+                      <li><a class="dropdown-item" href="/productlist/1">Medicine</a></li>
+                      <li><a class="dropdown-item" href="/productlist/2">Baby Products</a></li>
+                      <li><a class="dropdown-item" href="/productlist/3">Beuty & Customatic Products</a></li>
+                      <li><a class="dropdown-item" href="/productlist/4">Nutrition & Supplements</a></li>
                     </ul>
                   </li>
 
