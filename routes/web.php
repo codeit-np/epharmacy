@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +35,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
 Route::get('productlist/{id}',[ProductListController::class,'getList']);
+Route::resource('carts',CartController::class)->middleware('clientauth');

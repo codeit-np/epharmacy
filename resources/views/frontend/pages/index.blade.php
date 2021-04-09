@@ -81,7 +81,7 @@
   {{-- Beauty Product --}}
   <div class="py-5">
     <div class="container">
-        <h1 class="text-center">Beauty & Customatic <span class="text-danger">Products</span></h1>
+        <h1 class="text-center">Beauty & Cosmetic <span class="text-danger">Products</span></h1>
         <center> <a href="/productlist/3" class="btn btn-danger btn-sm">See more</a></center>
           <div class="row mt-4">
             @foreach ($beauty as $beauty)

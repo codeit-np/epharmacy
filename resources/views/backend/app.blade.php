@@ -183,6 +183,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
 
+          @if (Auth::user()->is_admin==1)
           <li class="nav-item">
             <a href="/categories" class="nav-link">
               <i class="nav-icon fas fa-cogs"></i>
@@ -200,6 +201,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+          @endif
+          
 
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"

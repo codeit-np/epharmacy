@@ -50,10 +50,8 @@
                       Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Medicine</a></li>
-                      <li><a class="dropdown-item" href="#">Baby Products</a></li>
-                      <li><a class="dropdown-item" href="#">Beuty & Customatic Products</a></li>
-                      <li><a class="dropdown-item" href="#">Nutrition & Supplements</a></li>
+                      <li><a class="dropdown-item" href="#">Online Doctor Consultant</a></li>
+                      <li><a class="dropdown-item" href="#">Pharmacy Stores</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">
