@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
 use App\Models\Cart;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+   
     $medecines = Product::where('category_id',1)->limit(4)->get();
     $baby = Product::where('category_id',2)->limit(4)->get();
     $beauty = Product::where('category_id',3)->limit(4)->get();
