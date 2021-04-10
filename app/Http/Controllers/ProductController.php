@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -15,8 +17,14 @@ class ProductController extends Controller
      */
     public function index()
     {
+        if(Auth::user()){
+            
+            $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
+        }else{
+            $totalCartItem = 0;
+        }
         $products = Product::all();
-        return view('backend.product.index',compact('products'));
+        return view('backend.product.index',compact('products','totalCartItem'));
     }
 
     /**
@@ -26,8 +34,14 @@ class ProductController extends Controller
      */
     public function create()
     {
+        if(Auth::user()){
+           
+            $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
+        }else{
+            $totalCartItem = 0;
+        }
         $categories = Category::all();
-        return view('backend.product.create',compact('categories'));
+        return view('backend.product.create',compact('categories','totalCartItem'));
     }
 
     /**
@@ -70,8 +84,14 @@ class ProductController extends Controller
      */
     public function show($id)
     {
+        if(Auth::user()){
+           
+            $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
+        }else{
+            $totalCartItem = 0;
+        }
         $product = Product::find($id);
-        return view('frontend.pages.productdetails',compact('product'));
+        return view('frontend.pages.productdetails',compact('product','totalCartItem'));
     }
 
     /**

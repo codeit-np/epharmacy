@@ -52,7 +52,7 @@
                       Services
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Online Doctor Consultant</a></li>
+                      <li><a class="dropdown-item" href="/doctorslist">Online Doctor Consultant</a></li>
                       <li><a class="dropdown-item" href="#">Pharmacy Stores</a></li>
                     </ul>
                   </li>
@@ -61,8 +61,31 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a>
+                    <a class="nav-link" href="/carts"><i class="fas fa-cart-plus"></i>@yield('total')</a>
                   </li>
+                  @if (!Auth::user())
+                        <li class="nav-item">
+                          <a class="nav-link" href="/carts">Login</a>
+                        </li>
+                  @endif
+
+                  @if (Auth::user())
+                  <li class="nav-item">
+                   
+                    <a class="nav-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                                  {{ Auth::user()->name }} | {{ __('Logout') }}
+                    </a>
+        
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+                    </li>
+                  @endif
+
+                
                 
                 </ul>
               </div>

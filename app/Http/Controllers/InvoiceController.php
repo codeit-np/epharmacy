@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class InvoiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,17 +14,7 @@ class CartController extends Controller
      */
     public function index()
     {
-       if(Auth::user()){
-           $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
-           $cartitems = Cart::where('user_id',auth()->user()->id)->get();
-           return view('frontend.pages.cart',compact('cartitems','totalCartItem'));
-       }
-    }
-
-    public function totalItem(Request $request)
-    {
-        $totalItem = Cart::where('user_id',$request->user()->id)->count();
-        return $totalItem;
+        //
     }
 
     /**
@@ -46,21 +35,18 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
+
+        return $request;
         $data = $request->validate([
-            'product_id' => 'required',
-            'qty' => 'required',
-            'rate' => 'required',
+            'amount' => 'required',
+            'address' => 'required'
         ]);
 
-        $cart= new Cart();
-        $cart->user_id = $request->user()->id;
-        $cart->product_id = $request->product_id;
-        $cart->qty = $request->qty;
-        $cart->rate = $request->rate;
-        $cart->save();
+        $invoice = new Invoice();
+        $invoice->user_id = $request->user()->id;
+        $invoice->total = $request->total;
+        $invoice->address = $request->address;
 
-        $request->session()->flash('message','Product added to cart');
-        return redirect()->back();
     }
 
     /**
@@ -105,8 +91,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $cart = Cart::find($id);
-        $cart->delete();
-        return redirect()->back();
+        //
     }
 }

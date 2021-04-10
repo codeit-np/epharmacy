@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
+use App\Models\Specialization;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class SpecializationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,17 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-       if(Auth::user()){
-           $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
-           $cartitems = Cart::where('user_id',auth()->user()->id)->get();
-           return view('frontend.pages.cart',compact('cartitems','totalCartItem'));
-       }
-    }
-
-    public function totalItem(Request $request)
-    {
-        $totalItem = Cart::where('user_id',$request->user()->id)->count();
-        return $totalItem;
+        $specializations = Specialization::all();
+        return view('backend.specialization.index',compact('specializations'));
     }
 
     /**
@@ -35,7 +25,7 @@ class CartController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.specialization.create');
     }
 
     /**
@@ -47,19 +37,14 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'product_id' => 'required',
-            'qty' => 'required',
-            'rate' => 'required',
+            'name' => 'required'
         ]);
 
-        $cart= new Cart();
-        $cart->user_id = $request->user()->id;
-        $cart->product_id = $request->product_id;
-        $cart->qty = $request->qty;
-        $cart->rate = $request->rate;
-        $cart->save();
+        $specialization = new Specialization();
+        $specialization->name = $request->name;
+        $specialization->save();
 
-        $request->session()->flash('message','Product added to cart');
+        $request->session()->flash('message','Record Saved');
         return redirect()->back();
     }
 
@@ -82,7 +67,8 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        //
+        $specialization = Specialization::find($id);
+        return view('backend.specialization.edit',compact('specialization'));
     }
 
     /**
@@ -94,7 +80,16 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required'
+        ]);
+
+        $specialization = Specialization::find($id);
+        $specialization->name = $request->name;
+        $specialization->update();
+
+        $request->session()->flash('message','Record Updated');
+        return redirect()->back();
     }
 
     /**
@@ -105,8 +100,6 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        $cart = Cart::find($id);
-        $cart->delete();
-        return redirect()->back();
+        //
     }
 }

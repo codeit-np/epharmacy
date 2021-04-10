@@ -2,12 +2,18 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\SpecializationController;
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +27,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   
+    if(Auth::user()){
+        $totalCartItem = Cart::where('user_id',auth()->user()->id)->count();
+    }else{
+        $totalCartItem = 0;
+    }
+  
+
     $medecines = Product::where('category_id',1)->limit(4)->get();
     $baby = Product::where('category_id',2)->limit(4)->get();
     $beauty = Product::where('category_id',3)->limit(4)->get();
     $nutrition = Product::where('category_id',4)->limit(4)->get();
-    return view('frontend.pages.index',compact('medecines','baby','beauty','nutrition'));
+   
+  
+    return view('frontend.pages.index',compact('medecines','baby','beauty','nutrition','totalCartItem'));
 });
 
 Auth::routes();
@@ -38,3 +52,10 @@ Route::resource('categories',CategoryController::class);
 Route::resource('products',ProductController::class);
 Route::get('productlist/{id}',[ProductListController::class,'getList']);
 Route::resource('carts',CartController::class)->middleware('clientauth');
+Route::resource('invoices',InvoiceController::class);
+
+Route::resource('specializations',SpecializationController::class);
+Route::resource('doctorslst',DoctorController::class);
+
+
+Route::get('doctorslist',[PageController::class,'doctors']);

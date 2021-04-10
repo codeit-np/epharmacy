@@ -1,4 +1,7 @@
 @extends('frontend.app')
+@section('total')
+   {{ $totalCartItem }}
+@endsection
 @section('content')
     <div class="container py-5">
         <div class="row">
@@ -16,6 +19,8 @@
                   </div>
             </div>
         @endforeach
+
+        {{ $products->links('pagination::bootstrap-4') }}
         </div>
     </div>
 @endsection

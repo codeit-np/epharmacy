@@ -1,4 +1,7 @@
 @extends('frontend.app')
+@section('total')
+   {{ $totalCartItem }}
+@endsection
 @section('content')
     <div class="container">
         <div class="row">
@@ -18,8 +21,8 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="my-input">Total Item</label>
-                                <input type="text" value="{{ $product->id }}" name="product_id">
-                                <input type="text" value="{{ $product->price }}" name="rate">
+                                <input type="text" value="{{ $product->id }}" name="product_id" hidden>
+                                <input type="text" value="{{ $product->price }}" name="rate" hidden>
                                 <input type="number" name="qty" id="" class="form-control" value="1" min="1">
                                 <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
                             </div>
