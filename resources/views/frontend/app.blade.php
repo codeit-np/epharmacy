@@ -71,18 +71,24 @@
 
                   @if (Auth::user())
                   <li class="nav-item">
+                    <a class="nav-link" href="/home"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                  </li>
+                  
+                  <li class="nav-item">
                    
                     <a class="nav-link" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                   document.getElementById('logout-form').submit();">
                                   <i class="nav-icon fas fa-sign-out-alt"></i>
-                                  {{ Auth::user()->name }} | {{ __('Logout') }}
+                                   {{ __('Logout') }}
                     </a>
         
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                   </form>
                     </li>
+
+                    
                   @endif
 
                 

@@ -51,11 +51,12 @@
                         <form action="/invoices" method="post">
                             @csrf
                                 @foreach ($cartitems as $item)
-                                    <input type="text" value="{{ $item->product->id }}" name="name[]" >
-                                    <input type="text" value="{{ $item->rate }}" name="rate[]" >
-                                    <input type="text" value="{{ $item->qty }}" name="qty[]" >
-                                    <input type="text" value="{{ $item->qty * $item->rate }}" name="total[]" > <br>
+                                    <input type="text" value="{{ $item->product->id }}" name="id[]" hidden >
+                                    <input type="text" value="{{ $item->rate }}" name="rate[]" hidden >
+                                    <input type="text" value="{{ $item->qty }}" name="qty[]" hidden >
+                                    <input type="text" value="{{ $item->qty * $item->rate }}" name="amount[]" hidden > <br>
                                 @endforeach
+                                <input type="text" name="total" value="<?php echo $amount ?>" hidden>
                                 <button type="submit" class="btn btn-primary btn-sm">Confirm Order</button>
                         </form>
                     </div>

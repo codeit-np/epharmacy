@@ -222,6 +222,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           @endif
+
+          @if (Auth::user()->is_admin == 0)
+          <li class="nav-item">
+            <a href="/invoices" class="nav-link">
+              <i class="nav-icon fas fa-file-invoice-dollar"></i>
+              <p>
+                Purchase History
+              </p>
+            </a>
+          </li>
+          @endif
+         
           
 
           <li class="nav-item">
