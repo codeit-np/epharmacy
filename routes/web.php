@@ -4,13 +4,16 @@ use App\Http\Controllers\AdminAppointmentController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ClientRegister;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\SpecializationController;
 use App\Models\Cart;
+use App\Models\Pharmacy;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +53,14 @@ Route::get('/contact',function(){
     return view('frontend.pages.contact');
 });
 
+Route::get('/pharmacylist',function(){
+    $pharmacy = Pharmacy::all();
+    return view('frontend.pages.pharmacylist',compact('pharmacy'));
+});
+
+Route::view('/clientregister','frontend.pages.clientregister');
+Route::resource('registerclient',ClientRegister::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -68,3 +79,4 @@ Route::resource('doctorslst',DoctorController::class);
 Route::get('doctorslist',[PageController::class,'doctors']);
 Route::resource('appointments',AppointmentController::class);
 Route::resource('adminappointments',AdminAppointmentController::class);
+Route::resource('pharmacy',PharmacyController::class);
