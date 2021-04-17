@@ -26,6 +26,14 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="stock">Stock Available</label>
+                                <select id="stock" class="form-control" name="stock">
+                                    <option value="1" >Yes</option>
+                                    <option value="0" >No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="category_id">Select Category</label>
                                 <select id="category_id" class="form-control" name="category_id">
                                    @foreach ($categories as $category)

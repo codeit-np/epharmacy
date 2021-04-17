@@ -57,7 +57,7 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
+                    <a class="nav-link" href="/contact">Contact us</a>
                   </li>
 
                   <li class="nav-item">
@@ -106,6 +106,34 @@
     {{-- Feature Baby Product --}}
     {{-- Feature Beauty Product --}}
 
+    <div class="bg-danger py-5">
+      <div class="container text-white">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>About us</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, libero optio dignissimos quisquam est rerum, doloribus eos ratione repellat placeat quas? Voluptatibus nesciunt et nostrum debitis sequi, laboriosam soluta totam non tenetur sint, consectetur iusto beatae, veniam obcaecati cum aut?</p>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Contact us</h3>
+            <address>
+              Duhabhi-3, Bijuli office road <br>
+              Tel: <a href="tel:+97721262562" class="text-white">+977-21-262562</a> <br>
+
+            </address>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Social Network</h3>
+            <ul>
+              <li><a class="text-white" href="#">Facebook</a></li>
+              <li><a class="text-white" href="#">Twitter</a></li>
+              <li><a class="text-white" href="#">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

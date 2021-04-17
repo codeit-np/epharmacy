@@ -64,6 +64,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
         $product->category_id = $request->category_id;
+        $product->stock = $request->stock;
         if($request->hasFile('image')){
             $data = $request->image;
             $newName = time() . $data->getClientOriginalName();
@@ -129,6 +130,7 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->description = $request->description;
         $product->category_id = $request->category_id;
+        $product->stock = $request->stock;
         if($request->hasFile('image')){
             $data = $request->image;
             $newName = time() . $data->getClientOriginalName();

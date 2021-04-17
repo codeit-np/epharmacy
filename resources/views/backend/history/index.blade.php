@@ -6,7 +6,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/categories/create" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-plus-square"></i> Create Category</a>
+                        {{-- <a href="/categories/create" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-plus-square"></i> Create Category</a> --}}
+                        <strong>New Order</strong>
                     </div>
                     <div class="card-body">
                         <table class="table table-sm table-striped table-bordered" id="datatable">

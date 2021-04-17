@@ -15,6 +15,7 @@
                                     <th>#</th>
                                     <th>Product Name</th>
                                     <th>Price</th>
+                                    <th>Stock</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -24,6 +25,7 @@
                                     <tr>
                                         <td>{{ $product->id }}</td>
                                         <td>{{ $product->name }}</td>
+                                        <td>{{ $product->stock == 1 ? "Available" : "Out of Stock" }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>
                                             <a href="/products/{{ $product->id }}/edit">Edit</a>

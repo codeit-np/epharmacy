@@ -49,7 +49,11 @@
                             <h5 class="card-title">{{ $medicine->name }}</h5>
                             <h6 class="card-title">Rs.{{ $medicine->price }}</h6>
                             <p class="card-text">{{ Str::limit($medicine->description,50) }}</p>
-                            <a href="/products/{{ $medicine->id }}" class="btn btn-primary">More Details</a>
+                            @if ($medicine->stock == 1)
+                              <a href="/products/{{ $medicine->id }}" class="btn btn-primary">More Details</a>
+                            @else
+                               <label for="" class="text-danger">OUT OF STOCK</label>
+                            @endif
                           </div>
                         </div>
                   </div>
@@ -72,7 +76,11 @@
                           <h5 class="card-title">{{ $baby->name }}</h5>
                           <h6 class="card-title">Rs.{{ $baby->price }}</h6>
                           <p class="card-text">{{ Str::limit($baby->description,50) }}</p>
+                          @if ($baby->stock == 1)
                           <a href="/products/{{ $baby->id }}" class="btn btn-primary">More Details</a>
+                          @else
+                          <label for="" class="text-danger">OUT OF STOCK</label>
+                          @endif
                         </div>
                       </div>
                 </div>
@@ -95,7 +103,11 @@
                           <h5 class="card-title">{{ $beauty->name }}</h5>
                           <h6 class="card-title">Rs.{{ $beauty->price }}</h6>
                           <p class="card-text">{{ Str::limit($beauty->description,50) }}</p>
+                          @if ($beauty->stock == 1)
                           <a href="/products/{{ $beauty->id }}" class="btn btn-primary">More Details</a>
+                          @else
+                          <label for="" class="text-danger">OUT OF STOCK</label>
+                          @endif
                         </div>
                       </div>
                 </div>
@@ -118,7 +130,11 @@
                         <h5 class="card-title">{{ $nutrition->name }}</h5>
                         <h6 class="card-title">Rs.{{ $nutrition->price }}</h6>
                         <p class="card-text">{{ Str::limit($nutrition->description,50) }}</p>
+                        @if ($nutrition->stock == 1)
                         <a href="/products/{{ $nutrition->id }}" class="btn btn-primary">More Details</a>
+                        @else
+                        <label for="" class="text-danger">OUT OF STOCK</label>
+                        @endif
                       </div>
                     </div>
               </div>

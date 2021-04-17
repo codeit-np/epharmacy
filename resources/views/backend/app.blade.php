@@ -220,6 +220,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="/adminappointments" class="nav-link">
+              <i class="nav-icon fas fa-user-nurse"></i>
+              <p>
+                Appointments
+              </p>
+            </a>
+          </li>
+
+
 
           @endif
 
@@ -229,6 +239,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="nav-icon fas fa-file-invoice-dollar"></i>
               <p>
                 Purchase History
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/appointments" class="nav-link">
+              <i class="nav-icon fas fa-file-invoice-dollar"></i>
+              <p>
+                My Appointments
               </p>
             </a>
           </li>

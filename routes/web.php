@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminAppointmentController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DoctorController;
@@ -43,6 +45,11 @@ Route::get('/', function () {
     return view('frontend.pages.index',compact('medecines','baby','beauty','nutrition','totalCartItem'));
 });
 
+Route::get('/contact',function(){
+    
+    return view('frontend.pages.contact');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -59,3 +66,5 @@ Route::resource('doctorslst',DoctorController::class);
 
 
 Route::get('doctorslist',[PageController::class,'doctors']);
+Route::resource('appointments',AppointmentController::class);
+Route::resource('adminappointments',AdminAppointmentController::class);
