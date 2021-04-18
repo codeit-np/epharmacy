@@ -53,7 +53,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="/doctorslist">Online Doctor Consultant</a></li>
-                      <li><a class="dropdown-item" href="#">Pharmacy Stores</a></li>
+                      <li><a class="dropdown-item" href="/pharmacylist">Pharmacy Stores</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">
