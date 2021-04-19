@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/pharmacy/create" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-plus-square"></i> Create Pharmacy</a>
+                        <a href="/pharmacies/create" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-plus-square"></i> Create Pharmacy</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-sm table-striped table-bordered" id="datatable">
@@ -32,7 +32,7 @@
                                         <td>{{ $pharmacy->address }}</td>
                                         <td>{{ $pharmacy->phone }}</td>
                                         <td>
-                                            <a href="/pharmacy/{{ $pharmacy->id }}/edit">Edit</a>
+                                            <a href="/pharmacies/{{ $pharmacy->id }}/edit">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach

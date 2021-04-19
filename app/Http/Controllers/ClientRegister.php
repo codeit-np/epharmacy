@@ -36,6 +36,7 @@ class ClientRegister extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -43,12 +44,13 @@ class ClientRegister extends Controller
            
         ]);
 
+
        $user = new User();
        $user->name = $request->name;
        $user->email = $request->email;
-       $user->password = Hash::make($request->name);
+       $user->password = Hash::make($request->password);
        $user->is_admin = 0;
-
+       $user->save();
        $request->session()->flash('message','Account Created');
        return redirect()->back();
     }

@@ -86,6 +86,6 @@ Route::resource('doctorslst',DoctorController::class);
 Route::get('doctorslist',[PageController::class,'doctors']);
 Route::resource('appointments',AppointmentController::class);
 Route::resource('adminappointments',AdminAppointmentController::class);
-Route::resource('pharmacy',PharmacyController::class);
+Route::resource('pharmacies',PharmacyController::class);
 Route::resource('contacts',ContactController::class);
 Route::resource('subscribes',SubscribeController::class);

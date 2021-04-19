@@ -5,10 +5,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="/pharmacy" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-arrow-left"></i> Go Back</a>
+                        <a href="/pharmacies" class="btn btn-primary btn-sm"><i class="nav-icon fas fa-arrow-left"></i> Go Back</a>
                     </div>
                     <div class="card-body">
-                        <form action="/pharmacy/{{ $pharmacy->id }}" method="post" enctype="multipart/form-data">
+                        <form action="/pharmacies/{{ $pharmacy->id }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="row">
