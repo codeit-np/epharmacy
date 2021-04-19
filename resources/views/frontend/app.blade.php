@@ -33,7 +33,7 @@
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="/about">About us</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -130,6 +130,12 @@
               <li><a class="text-white" href="#">Twitter</a></li>
               <li><a class="text-white" href="#">YouTube</a></li>
             </ul>
+
+            <form action="/subscribes" method="post">
+              @csrf
+              <input type="email" name="email" id="" placeholder="Email"> 
+              <button type="submit" class="btn btn-sm btn-primary">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>

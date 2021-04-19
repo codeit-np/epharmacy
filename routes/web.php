@@ -5,6 +5,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientRegister;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PageController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\SpecializationController;
+use App\Http\Controllers\SubscribeController;
 use App\Models\Cart;
 use App\Models\Pharmacy;
 use App\Models\Product;
@@ -53,6 +55,11 @@ Route::get('/contact',function(){
     return view('frontend.pages.contact');
 });
 
+Route::get('/about',function(){
+    
+    return view('frontend.pages.about');
+});
+
 Route::get('/pharmacylist',function(){
     $pharmacy = Pharmacy::all();
     return view('frontend.pages.pharmacylist',compact('pharmacy'));
@@ -80,3 +87,5 @@ Route::get('doctorslist',[PageController::class,'doctors']);
 Route::resource('appointments',AppointmentController::class);
 Route::resource('adminappointments',AdminAppointmentController::class);
 Route::resource('pharmacy',PharmacyController::class);
+Route::resource('contacts',ContactController::class);
+Route::resource('subscribes',SubscribeController::class);

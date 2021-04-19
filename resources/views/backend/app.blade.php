@@ -222,7 +222,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="/pharmacy" class="nav-link">
-              <i class="nav-icon fas fa-user-nurse"></i>
+              <i class="nav-icon fas fa-hospital-user"></i>
               <p>
                 Pharmacy
               </p>
@@ -232,12 +232,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <a href="/adminappointments" class="nav-link">
-              <i class="nav-icon fas fa-user-nurse"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Appointments
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="/contacts" class="nav-link">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Messages
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/subscribes" class="nav-link">
+              <i class="nav-icon fas fa-rss-square"></i>
+              <p>
+                Subscribe
+              </p>
+            </a>
+          </li>
+
 
 
 

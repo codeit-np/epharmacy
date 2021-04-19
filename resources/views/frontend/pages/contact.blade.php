@@ -35,6 +35,10 @@
 
                            <button type="submit" class="btn btn-danger btn-sm">Send Message</button>
                         </form>
+
+                    @if (session('message'))
+                        <div class="alert alert-success alert-sm my-2">{{ session('message') }}</div>
+                    @endif
                     </div>
                 </div>
             </div>
