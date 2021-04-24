@@ -22,19 +22,36 @@
                             </thead>
 
                             <tbody>
+                                @if (Auth::user()->is_admin == 0)
+                                    @foreach ($invoices as $invoice)
+                                        @if (Auth::user()->id == $invoice->user_id)
+                                        <tr>
+                                            <td>{{ $invoice->id }}</td>
+                                            <td>{{ $invoice->created_at }}</td>
+                                            <td>{{ $invoice->address }}</td>
+                                            <td>{{ number_format($invoice->total) }}</td>
+                                            <td>
+                                                <a href="/invoices/{{ $invoice->id }}">Invoice Details</a>
+                                            </td>
+                                        </tr>
+                                        @endif
+                                    @endforeach
+                                @else
                                 @foreach ($invoices as $invoice)
-                                    @if (Auth::user()->id == $invoice->user_id)
-                                    <tr>
-                                        <td>{{ $invoice->id }}</td>
-                                        <td>{{ $invoice->created_at }}</td>
-                                        <td>{{ $invoice->address }}</td>
-                                        <td>{{ number_format($invoice->total) }}</td>
-                                        <td>
-                                            <a href="/invoices/{{ $invoice->id }}">Invoice Details</a>
-                                        </td>
-                                    </tr>
-                                    @endif
-                                @endforeach
+                               
+                                <tr>
+                                    <td>{{ $invoice->id }}</td>
+                                    <td>{{ $invoice->created_at }}</td>
+                                    <td>{{ $invoice->address }}</td>
+                                    <td>{{ number_format($invoice->total) }}</td>
+                                    <td>
+                                        <a href="/invoices/{{ $invoice->id }}">Invoice Details</a>
+                                    </td>
+                                </tr>
+                               
+                            @endforeach
+                                @endif
+                                
                             </tbody>
                         </table>
                     </div>

@@ -221,6 +221,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 
           <li class="nav-item">
+            <a href="/invoices" class="nav-link">
+              <i class="nav-icon fas fa-rss-square"></i>
+              <p>
+                Invoice
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="/pharmacies" class="nav-link">
               <i class="nav-icon fas fa-hospital-user"></i>
               <p>
@@ -256,8 +265,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
-
-
 
 
           @endif
